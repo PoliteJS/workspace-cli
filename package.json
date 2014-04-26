@@ -1,0 +1,26 @@
+{
+  "name": "workspace-cli",
+  "version": "0.0.0",
+  "description": "run utility for PoliteJS/workspace",
+  "main": "index.js",
+  "bin": {
+    "wks": "./bin/cli.js"
+  },
+  "author": {
+    "name": "Marco Pegoraro",
+    "url": "http://movableapp.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PoliteJS/workspace-cli"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "async": "~0.7.0",
+    "extend": "~1.2.1"
+  }
+}
