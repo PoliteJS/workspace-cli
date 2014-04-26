@@ -1,7 +1,10 @@
 Workspace Cli
 =============
 
-Install this utility:
+> This is the support repository for **PoliteJS Workspace** project.  
+> [Please visit the main project page](https://github.com/PoliteJS/workspace).
+
+Install Workspace CLI:
 
     npm install -g workspace-cli
     
