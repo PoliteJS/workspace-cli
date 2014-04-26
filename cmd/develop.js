@@ -14,8 +14,8 @@ exports.start = function() {
     async.series([
         npmInstall,
         gruntInstall,
-        startServer,
-        gruntDevelop
+        gruntDevelop,
+        startServer
     ], function(err) {
         if (err) {
             console.log('!!! WKS> Unable to startup development ennvironment!');
@@ -70,14 +70,20 @@ function gruntInstall(next) {
 function startServer(next) {
     console.log('WKS> starting debug server...');
     
-    var cmd = command('node lib/workspace/debug-server.js');
+    var cmd = command('grunt server');
     cmd.on('exit', killProcesses);
     
+    var show = false;
     cmd.stdout.on('data', function(chunk) {
-        console.log(chunk);
+        if (show) {
+            process.stdout.write(chunk);
+            next();
+        } else {
+            if (~chunk.indexOf('Running "wks-debug-server:wkd"')) {
+                show = true;
+            }
+        }
     });
-    
-    next();
 }
 
 function gruntDevelop(next) {
@@ -89,7 +95,7 @@ function gruntDevelop(next) {
     var show = false;
     cmd.stdout.on('data', function(chunk) {
         if (show && ~chunk.indexOf('Completed in ')) {
-            console.log(chunk);
+            process.stdout.write(chunk);
         } else {
             if (~chunk.indexOf('Waiting...')) {
                 show = true;

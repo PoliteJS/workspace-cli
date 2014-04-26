@@ -1,7 +1,7 @@
 {
   "name": "workspace-cli",
-  "version": "0.0.0",
-  "description": "run utility for PoliteJS/workspace",
+  "version": "0.0.2",
+  "description": "CLI for PoliteJS/workspace",
   "main": "index.js",
   "bin": {
     "wks": "./bin/cli.js"
