@@ -2,18 +2,14 @@
 var command = require('../lib/command');
 var async = require('async');
 
+
 var processes = [];
-
-
-
-
-
 
 exports.start = function() {
     
     async.series([
-        npmInstall,
-        gruntInstall,
+        require('./subs/npm-install'),
+        require('./subs/grunt-install'),
         gruntDevelop,
         startServer
     ], function(err) {
@@ -34,36 +30,6 @@ exports.stop = killProcesses;
 function killProcesses() {
     processes.forEach(function(process) {
         process.kill();
-    });
-}
-
-function npmInstall(next) {
-    
-    console.log('WKS> running "npm install"...');
-    
-    var cmd = command('npm install', {
-        onSuccess: function() {
-            next();
-        },
-        onError: function() {
-            next('npm install failed');
-        }
-    });
-    
-    
-    
-}
-
-function gruntInstall(next) {
-    console.log('WKS> running "grunt install"...');
-    
-    var cmd = command('grunt install', {
-        onSuccess: function() {
-            next();
-        },
-        onError: function() {
-            next('grunt install failed');
-        }
     });
 }
 
