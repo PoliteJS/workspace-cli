@@ -1,5 +1,5 @@
-Workspace Cli
-=============
+PoliteJS / WorkspaceCLI
+=======================
 
 > This is the support repository for **PoliteJS Workspace** project.  
 > [Please visit the main project page](https://github.com/PoliteJS/workspace).
@@ -13,6 +13,9 @@ In order to use the utility command `wks` you need to install it in your system:
 <small>(`sudo` should be avoided on Windows machines)</small>
 
 > The only dependency is [NodeJS](http://nodejs.org) which need to be installed on your computer.
+
+To check if everything is at the right place you should just run `wks` on your terminal, it show some basic help messages.
+
     
     
 ## Initialize a Workspace Project
