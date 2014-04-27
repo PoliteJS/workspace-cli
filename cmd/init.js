@@ -10,7 +10,8 @@ exports.start = function() {
         gitMoveGitignore,
         cleanTempFolder,
         require('./subs/npm-install'),
-        require('./subs/grunt-install')
+        require('./subs/grunt-install'),
+        require('./subs/grunt-build')
     ], function(err) {
         if (!err) {
             successMsg();

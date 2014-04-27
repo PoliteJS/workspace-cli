@@ -6,11 +6,9 @@ module.exports = function(next) {
     
     var cmd = command('npm install', {
         onSuccess: function() {
-            console.log('');
             next();
         },
         onError: function() {
-            console.log('');
             next('npm install failed');
         }
     });
