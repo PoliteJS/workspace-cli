@@ -4,7 +4,8 @@ var async = require('async');
 var fs = require('fs');
 
 exports.start = function() {
-    async.series([
+    
+    var tasks = [
         gitClone,
         gitMoveFiles,
         gitMoveGitignore,
@@ -12,11 +13,23 @@ exports.start = function() {
         require('./subs/npm-install'),
         require('./subs/grunt-install'),
         require('./subs/grunt-build')
-    ], function(err) {
+    ];
+    
+    // skip git-clone if a project is already initialized
+    if (fs.existsSync('package.json')) {
+        console.log('WKS> skip Git cloning because this is an existing project!');
+        console.log('WKS> next time you should just run "wks develop"');
+        tasks.shift();
+        tasks.shift();
+        tasks.shift();
+        tasks.shift();
+    }
+    
+    async.series(tasks, function(err) {
         if (!err) {
             successMsg();
         } else {
-            console.log('SETUP ERRORS!');
+            console.log('SETUP ERRORS!', err);
         }
     });
 };
