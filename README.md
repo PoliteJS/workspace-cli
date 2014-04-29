@@ -4,8 +4,6 @@ PoliteJS / WorkspaceCLI
 > This is the support repository for **PoliteJS Workspace** project.  
 > [Please visit the main project page](https://github.com/PoliteJS/workspace).
 
-<iframe src="//player.vimeo.com/video/93068205" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/93068205">PoliteJS WorkspaceCLI</a> from <a href="http://vimeo.com/user27381928">Marco Pegoraro</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
 ## Install Workspace CLI:
 
 In order to use the utility command `wks` you need to install it in your system:
