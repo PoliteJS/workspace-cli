@@ -11,7 +11,7 @@ exports.start = function() {
         require('./subs/npm-install'),
         require('./subs/grunt-install'),
         gruntDevelop,
-        startCi,
+//        startCi,
         startServer
     ], function(err) {
         if (err) {
