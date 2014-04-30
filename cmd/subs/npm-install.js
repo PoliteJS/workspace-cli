@@ -6,6 +6,7 @@ module.exports = function(next) {
     
     var cmd = command('npm install', {
         onSuccess: function() {
+            process.stdout.write('\r');
             next();
         },
         onError: function() {
