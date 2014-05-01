@@ -4,6 +4,15 @@ PoliteJS / WorkspaceCLI
 > This is the support repository for **PoliteJS Workspace** project.  
 > [Please visit the main project page](https://github.com/PoliteJS/workspace).
 
+## Available Commands:
+
+    wks init            // setup npm dependencies
+    wks init --karma    // above including karma
+    wks develop         // start a coding session
+    wks develop --ci    // above with continuous integration
+    wks release         // create a release build
+    wks ci              // run a continuous integration session
+
 ## Install Workspace CLI:
 
 In order to use the utility command `wks` you need to install it in your system:
@@ -43,4 +52,16 @@ Every time you modify a file from `src/*` the project is build again and you can
 > If you use [**LiveReload** extension for Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) you don't even need to reload the page!  
 
 To exit the coding session just use `Ctrl + c`.
+
+## Enable Karma Test Runner
+
+    wks init --karma
+    
+## Enable Continuous Integration
+
+    wks develop --ci
+    
+    
+    
+    
 

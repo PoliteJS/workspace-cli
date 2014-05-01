@@ -14,7 +14,7 @@ module.exports = function(next) {
         }
     });
     
-    var max = 22;
+    var max = 12;
     var count = 0;
     cmd.stdout.on('data', function(chunk) {
         count++;

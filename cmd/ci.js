@@ -1,4 +1,4 @@
-
+    
 var command = require('../lib/command');
 var async = require('async');
 
@@ -14,7 +14,9 @@ exports.start = function() {
         runCi
     ], function(err) {
         if (err) {
-            console.log('!!! WKS> ERR[' + err + '] > Unable to run ci process!');
+            console.log('!!! ERROR !!!');
+            console.log('did you installed karma support?');
+            console.log('try to run "wks init --karma && wks ci"');
         }
     });
     

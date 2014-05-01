@@ -25,6 +25,12 @@ exports.start = function() {
         tasks.shift();
     }
     
+    // install karma and run tests once
+    if (process.argv.indexOf('-k') !== -1 || process.argv.indexOf('--karma') !== -1) {
+        tasks.push(require('./subs/grunt-install-karma'));
+        tasks.push(require('./subs/grunt-test'));
+    }
+    
     async.series(tasks, function(err) {
         if (!err) {
             successMsg();

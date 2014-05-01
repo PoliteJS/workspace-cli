@@ -7,13 +7,20 @@ var processes = [];
 
 exports.start = function() {
     
-    async.series([
+    var tasks = [
         require('./subs/npm-install'),
         require('./subs/grunt-install'),
-        gruntDevelop,
-//        startCi,
-        startServer
-    ], function(err) {
+        gruntDevelop
+    ];
+    
+    // add ci support to the development session
+    if (process.argv.indexOf('-c') !== -1 || process.argv.indexOf('--ci') !== -1) {
+        tasks.push(startCi);
+    }
+    
+    tasks.push(startServer)
+    
+    async.series(tasks, function(err) {
         if (err) {
             console.log('!!! WKS> Unable to startup development ennvironment!');
             console.log(err);
