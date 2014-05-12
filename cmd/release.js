@@ -1,6 +1,7 @@
 
 var command = require('../lib/command');
 var async = require('async');
+var fs = require('fs');
 
 
 var processes = [];
@@ -63,6 +64,12 @@ function gruntRelease(next) {
 
 function gruntTest(next) {
     console.log('WKS> running tests...');
+    
+    if (!fs.existsSync('./node_modules/grunt-karma')) {
+        console.log('WARNING: no karma runner configured, run "wks init --karma" to set it up!');
+        next();
+        return;
+    }
     
     var cmd = command('grunt test', {
         onExit: next
