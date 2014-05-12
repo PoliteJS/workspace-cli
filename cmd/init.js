@@ -5,6 +5,19 @@ var fs = require('fs');
 
 exports.start = function() {
     
+    var featureIdx = process.argv.lastIndexOf('-f');
+    if (featureIdx !== -1 && process.argv[featureIdx+1]) {
+        require('./init-feature').start(process.argv[featureIdx+1]);
+        return;
+    }
+    
+    var moduleIdx = process.argv.lastIndexOf('-m');
+    if (moduleIdx !== -1 && process.argv[moduleIdx+1]) {
+        require('./init-module').start(process.argv[moduleIdx+1]);
+        return;
+    }
+    
+    
     var tasks = [
         gitClone,
         gitMoveFiles,

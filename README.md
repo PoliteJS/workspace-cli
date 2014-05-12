@@ -8,6 +8,8 @@ PoliteJS / WorkspaceCLI
 
     wks init            // setup npm dependencies
     wks init --karma    // above including karma
+    wks init -f [new-feature-name]
+    wks init -m [new-module-name]
     wks develop         // start a coding session
     wks develop --ci    // above with continuous integration
     wks release         // create a release build
@@ -52,6 +54,18 @@ Every time you modify a file from `src/*` the project is build again and you can
 > If you use [**LiveReload** extension for Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei) you don't even need to reload the page!  
 
 To exit the coding session just use `Ctrl + c`.
+
+## Create a Release Build
+
+    wks release
+
+## Create a New Feature
+
+    wks init -f feature-name
+    
+## Create a New Module
+
+    wks init -m module-name
 
 ## Enable Karma Test Runner
 
