@@ -2,7 +2,7 @@
 exports.start = function() {
     console.log('');
     console.log('');
-    console.log('------------ PoliteJS WorkspaceCLI v0.1.2 --------------');
+    console.log('------------ PoliteJS WorkspaceCLI v0.3.2 --------------');
     console.log('wks init:    initialize an emtpy folder to host a new ');
     console.log('             Workspace boilerplate project.');
     console.log('');

@@ -1,6 +1,6 @@
 {
   "name": "workspace-cli",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "CLI for PoliteJS/workspace",
   "main": "index.js",
   "bin": {
