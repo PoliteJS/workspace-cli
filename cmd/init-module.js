@@ -42,7 +42,7 @@ function createIndex(folderName, next) {
     var content =   '// Module: ' + folderName + '\n\n';
         content+=  'module.exports = function() {\n'
         content+=  '\tconsole.log("module ' + folderName + '");\n'
-        content+=  '}\n\n'
+        content+=  '};\n\n'
     fs.writeFile('src/modules/' + folderName + '/index.js', content, function(err) {
         next(err, folderName);
     });

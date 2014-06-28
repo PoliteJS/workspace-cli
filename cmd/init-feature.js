@@ -42,10 +42,10 @@ function createIndex(folderName, next) {
     var content =   '// Feature: ' + folderName + '\n\n';
         content+=  'exports.init = function(config) {\n'
         content+=  '\tconsole.log("init feature ' + folderName + '");\n'
-        content+=  '}\n\n'
+        content+=  '};\n\n'
         content+=  'exports.start = function() {\n'
         content+=  '\tconsole.log("start feature ' + folderName + '");\n'
-        content+=  '}\n\n'
+        content+=  '};\n\n'
     fs.writeFile('src/features/' + folderName + '/index.js', content, function(err) {
         next(err, folderName);
     });
